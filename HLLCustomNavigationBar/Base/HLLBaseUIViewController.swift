@@ -99,6 +99,8 @@ class HLLBaseUIViewController: UIViewController {
     private var navigationBarTopConstrain: Constraint? = nil
     private var contentTopConstrain: Constraint? = nil
     private var navigationBarHeightConstrain: Constraint? = nil
+    private var navigatorHeightConstrain: Constraint? = nil
+    private var navigatorHeight: CGFloat = 0
     private var isPortrait: Bool = true{
         didSet{
             navigationBar.snp.updateConstraints { (make) in
@@ -123,7 +125,7 @@ class HLLBaseUIViewController: UIViewController {
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             self.navigationBarTopConstrain = make.top.equalToSuperview().offset(0).constraint
-            make.height.equalTo(UIApplication.shared.statusBarFrame.height + navigationBarHeight)
+          self.navigatorHeightConstrain =  make.height.equalTo(UIApplication.shared.statusBarFrame.height + navigationBarHeight).constraint
         }
         
         
@@ -133,22 +135,30 @@ class HLLBaseUIViewController: UIViewController {
             self.contentTopConstrain = make.top.equalTo(navigationBar.snp.bottom).offset(0).constraint
             make.bottom.equalToSuperview()
         }
-        
-        
     }
-    //横竖屏判断
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        coordinator.notifyWhenInteractionChanges { (context) in
-            if context.percentComplete != 0 {
-                if size.width > size.height {
-                    self.isPortrait = false
-                }else{
-                    self.isPortrait = true
-                }
-                
-            }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        navigationBar.snp.updateConstraints { (make) in
+            make.height.equalTo(UIApplication.shared.statusBarFrame.height + navigationBarHeight)
         }
+
     }
+    
+    
+    //横竖屏判断
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//        coordinator.notifyWhenInteractionChanges { (context) in
+//            if context.percentComplete != 0 {
+//                if size.width > size.height {
+//                    self.isPortrait = false
+//                }else{
+//                    self.isPortrait = true
+//                }
+//
+//            }
+//        }
+//    }
     
     func pop() {
         navigationController?.popViewController(animated: true)

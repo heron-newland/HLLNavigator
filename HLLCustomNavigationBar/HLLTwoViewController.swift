@@ -19,26 +19,27 @@ class HLLTwoViewController: HLLBaseUIViewController {
         configureTextfield()
         configureGoButton()
         // Do any additional setup after loading the view.
-        let back = UIButton()
+        let back = HLLCustomNavigatorItem()
         back.setTitle("Back", for: .normal)
         back.setTitleColor(UIColor.blue, for: .normal)
         navigationBar.navigationBackItem = back
         
-        let btn = UIButton()
+        let btn = HLLCustomNavigatorItem()
         btn.setTitle("one", for: .normal)
         btn.setTitleColor(UIColor.blue, for: .normal)
         btn.addTarget(self, action: #selector(rightOneActon), for: .touchUpInside)
         
-        let btn2 = UIButton()
+        let btn2 = HLLCustomNavigatorItem()
         btn2.setTitle("two", for: .normal)
         btn2.setTitleColor(UIColor.blue, for: .normal)
         
-        let btn3 = UIButton()
+        let btn3 = HLLCustomNavigatorItem()
         btn3.setTitle("left one", for: .normal)
+        btn3.setImage(UIImage(named: "书本费"), for: .normal)
         btn3.setTitleColor(UIColor.blue, for: .normal)
         
-        let btn4 = UIButton()
-        btn4.setTitle("lefgt two", for: .normal)
+        let btn4 = HLLCustomNavigatorItem()
+        btn4.setTitle("lefgt two哈", for: .normal)
         btn4.setTitleColor(UIColor.blue, for: .normal)
         
         
@@ -48,7 +49,7 @@ class HLLTwoViewController: HLLBaseUIViewController {
         navigationBar.numberOfLines = 2
         navigationBar.fontOfTitle = UIFont.systemFont(ofSize: 12)
         
-        navigationBar.innerMargin = 20
+        navigationBar.innerMargin = 6
         navigationBar.margin = 12
         navigationBar.spaceBetween = 4
         navigationBar.backgroundColor = UIColor.purple.withAlphaComponent(0.5)
@@ -79,7 +80,7 @@ class HLLTwoViewController: HLLBaseUIViewController {
     }
     override func pop() {
 //       super.pop()
-        navigationController?.popViewController(animated: false)
+        navigationController?.popViewController(animated: true)
     }
     @objc func goActon(){
         if (navigationController?.viewControllers.last?.isKind(of: HLLOneViewController.self))! {

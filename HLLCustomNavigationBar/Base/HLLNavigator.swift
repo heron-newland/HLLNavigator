@@ -24,12 +24,12 @@ class HLLNavigator: UIView {
             configureBackButton(isCustom: true)
         }
     }
-    var navigationRightItems: [UIButton]?{
+    var navigationRightItems: [HLLCustomNavigatorItem]?{
         didSet{
             configureRightItems()
         }
     }
-    var navigationLeftItems: [UIButton]?{
+    var navigationLeftItems: [HLLCustomNavigatorItem]?{
         didSet{
             configureLeftItems()
         }
@@ -206,17 +206,20 @@ extension HLLNavigator{
         guard let leftItems = navigationLeftItems else {
             return
         }
+        
         for (index,item) in leftItems.enumerated() {
 //            print(index,item)
             if !contains(item) {
                 addSubview(item)
             }
+            debugPrint("\(item.itemWitdth)")
             item.snp.removeConstraints()
             if index == 0{
                 item.snp.makeConstraints { (make) in
                     make.left.equalTo(backButton.snp.right).offset(spaceBetween)
 //                    make.centerY.equalToSuperview().offset(10)
                     make.bottom.equalTo(self)
+                    make.width.equalTo(item.itemWitdth)
                     make.height.equalTo(44)
                 }
             }else{
@@ -225,8 +228,12 @@ extension HLLNavigator{
 //                    make.centerY.equalToSuperview().offset(10)
                     make.bottom.equalTo(self)
                     make.height.equalTo(44)
+                     make.width.equalTo(item.itemWitdth)
+                    
                 }
             }
+            
+            
             
         }
     }
@@ -240,6 +247,18 @@ extension HLLNavigator{
     private func caculatorTitleFrame() {
         
         guard let _ = navigationTitle else { return }
+        
+        
+        if navigationLeftItems?.count != 0 && navigationRightItems?.count != 0 {
+            titleLabel.snp.removeConstraints()
+            titleLabel.snp.makeConstraints { (make) in
+                make.left.equalTo(navigationLeftItems!.last!.snp.right).offset(spaceBetween)
+//                make.width.equalTo(bounds.width - (lastLeftItem.frame.maxX + bounds.width - lastRightItem.frame.origin.x + spaceBetween * 2))
+                                    make.right.equalTo(navigationRightItems!.last!.snp.left).offset(-spaceBetween)
+                make.bottom.equalTo(self)
+                make.height.equalTo(44)
+            }
+        }
         
 //        guard let backBtn = backButton else { return }
         

@@ -20,6 +20,7 @@
 		5B1E20C4214670430029C26B /* HLLThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E20C3214670430029C26B /* HLLThreeViewController.swift */; };
 		5BAAA9AC2142602E0033BE13 /* HLLNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAAA9AB2142602E0033BE13 /* HLLNavigator.swift */; };
 		5BAAA9AE214269CF0033BE13 /* HLLNavigatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAAA9AD214269CF0033BE13 /* HLLNavigatorDelegate.swift */; };
+		5BCFB808219D69F800F8D291 /* HLLCustomNavigatorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCFB807219D69F800F8D291 /* HLLCustomNavigatorItem.swift */; };
 		AABAF132A2325339E6065F89 /* Pods_HLLCustomNavigationBarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BA4894C221D48A58FCDA82 /* Pods_HLLCustomNavigationBarUITests.framework */; };
 		F382637043BA0ABCF41EE0F9 /* Pods_HLLCustomNavigationBarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A3AD22CA7A2FA38A67A32F /* Pods_HLLCustomNavigationBarTests.framework */; };
 		FE637703A2AB6A13D5246BEC /* Pods_HLLCustomNavigationBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBF79DBF365C991557BD1BA /* Pods_HLLCustomNavigationBar.framework */; };
@@ -63,6 +64,7 @@
 		5B1E20C3214670430029C26B /* HLLThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLLThreeViewController.swift; sourceTree = "<group>"; };
 		5BAAA9AB2142602E0033BE13 /* HLLNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLLNavigator.swift; sourceTree = "<group>"; };
 		5BAAA9AD214269CF0033BE13 /* HLLNavigatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLLNavigatorDelegate.swift; sourceTree = "<group>"; };
+		5BCFB807219D69F800F8D291 /* HLLCustomNavigatorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLLCustomNavigatorItem.swift; sourceTree = "<group>"; };
 		771B6F87FE527444ACD88A86 /* Pods-HLLCustomNavigationBarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLLCustomNavigationBarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HLLCustomNavigationBarTests/Pods-HLLCustomNavigationBarTests.release.xcconfig"; sourceTree = "<group>"; };
 		78A3AD22CA7A2FA38A67A32F /* Pods_HLLCustomNavigationBarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLLCustomNavigationBarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96F1071DA117F77075F52D2 /* Pods-HLLCustomNavigationBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLLCustomNavigationBar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HLLCustomNavigationBar/Pods-HLLCustomNavigationBar.debug.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				5B19C9BA21411CBC00BB8832 /* HLLBaseNavigationController.swift */,
 				5B19C9B22141186500BB8832 /* HLLBaseUIViewController.swift */,
 				5BAAA9AB2142602E0033BE13 /* HLLNavigator.swift */,
+				5BCFB807219D69F800F8D291 /* HLLCustomNavigatorItem.swift */,
 				5BAAA9AD214269CF0033BE13 /* HLLNavigatorDelegate.swift */,
 			);
 			path = Base;
@@ -410,6 +413,7 @@
 				5BAAA9AE214269CF0033BE13 /* HLLNavigatorDelegate.swift in Sources */,
 				5B19C9B32141186500BB8832 /* HLLBaseUIViewController.swift in Sources */,
 				5B19C9B921411C2E00BB8832 /* HLLTwoViewController.swift in Sources */,
+				5BCFB808219D69F800F8D291 /* HLLCustomNavigatorItem.swift in Sources */,
 				5B19C9B721411C2000BB8832 /* HLLOneViewController.swift in Sources */,
 				5B19C9852141181400BB8832 /* AppDelegate.swift in Sources */,
 				5B1E20C4214670430029C26B /* HLLThreeViewController.swift in Sources */,
